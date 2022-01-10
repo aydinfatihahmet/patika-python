@@ -1,0 +1,45 @@
+Soru-1:
+
+Bir listeyi düzleştiren (flatten) fonksiyon yazın. Elemanları birden çok katmanlı listelerden ([[3],2] gibi) oluşabileceği gibi, non-scalar verilerden de oluşabilir. Örnek olarak:
+
+input: [[1,'a',['cat'],2],[[[3]],'dog'],4,5]
+
+output: [1,'a','cat',2,3,'dog',4,5]
+
+Cevap-1:
+
+a = [[1,'a',['cat'],2],[[[3]],'dog'],4,5]
+
+b = []
+
+for value in a:
+  if hasattr(value,"__iter__"):
+    b.extend(value)
+  else:
+    b.append(value)
+  
+print(b)
+
+
+
+Soru-2:
+
+Verilen listenin içindeki elemanları tersine döndüren bir fonksiyon yazın. Eğer listenin içindeki elemanlar da liste içeriyorsa onların elemanlarını da tersine döndürün. Örnek olarak:
+
+input: [[1, 2], [3, 4], [5, 6, 7]]
+
+output: [[[7, 6, 5], [4, 3], [2, 1]]
+
+Cevap-2:
+
+def flip(a):
+  a[0].reverse()
+  a[1].reverse()
+  a[2].reverse()
+  a.reverse()
+  return a
+
+
+a =  [[1, 2], [3, 4], [5, 6, 7]]
+
+print(flip(a))
